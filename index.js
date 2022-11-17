@@ -1,10 +1,25 @@
-var endDate = new Date('Nov 20, 2022 22:00:00').getTime();
+const endDate = new Date('Nov 20, 2022 22:00:00').getTime();
 
-var countDownTimer = setInterval(() => {
+const englishToBanglaNumber = {
+    0: "০",
+    1: "১",
+    2: "২",
+    3: "৩",
+    4: "৪",
+    5: "৫",
+    6: "৬",
+    7: "৭",
+    8: "৮",
+    9: "৯",
+};
 
-    var now = new Date().getTime();
 
-    var remainingTime = endDate - now;
+
+const countDownTimer = setInterval(() => {
+
+    const now = new Date().getTime();
+
+    const remainingTime = endDate - now;
 
     const second = 1000;
 
@@ -14,21 +29,25 @@ var countDownTimer = setInterval(() => {
 
     const day = hour * 24;
 
-    daysLeft = Math.floor(remainingTime / day);
+    const daysLeft = Math.floor(remainingTime / day);
+    const banglaDaysLeft = daysLeft.toLocaleString('bn-BD');
 
-    hoursLeft = Math.floor((remainingTime % day) / hour);
+    const hoursLeft = Math.floor((remainingTime % day) / hour);
+    const banglaHoursLeft = hoursLeft.toLocaleString('bn-BD');
 
-    minutesLeft = Math.floor((remainingTime % hour) / minute);
+    const minutesLeft = Math.floor((remainingTime % hour) / minute);
+    const banglaMinutesLeft = minutesLeft.toLocaleString('bn-BD');
 
-    secondsLeft = Math.floor((remainingTime % minute) / second);
+    const secondsLeft = Math.floor((remainingTime % minute) / second);
+    const banglaSecondsLeft = secondsLeft.toLocaleString('bn-BD');
 
-    document.querySelector('#days').innerHTML = daysLeft;
+    document.querySelector('#days').innerHTML = banglaDaysLeft;
 
-    document.querySelector('#hours').innerHTML = hoursLeft;
+    document.querySelector('#hours').innerHTML = banglaHoursLeft;
 
-    document.querySelector('#minutes').innerHTML = minutesLeft;
+    document.querySelector('#minutes').innerHTML = banglaMinutesLeft;
 
-    document.querySelector('#seconds').innerHTML = secondsLeft;
+    document.querySelector('#seconds').innerHTML = banglaSecondsLeft;
 
     if (remainingTime <= 0) {
 
