@@ -1,19 +1,5 @@
 const endDate = new Date('Nov 20, 2022 22:00:00').getTime();
 
-const englishToBanglaNumber = {
-    0: "০",
-    1: "১",
-    2: "২",
-    3: "৩",
-    4: "৪",
-    5: "৫",
-    6: "৬",
-    7: "৭",
-    8: "৮",
-    9: "৯",
-};
-
-
 
 const countDownTimer = setInterval(() => {
 
